@@ -1,0 +1,57 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sai}
+      POSTGRES_USER: ${POSTGRES_USER:-sai_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sai_dev_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-sai_user} -d ${POSTGRES_DB:-sai}"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  backend:
+    build: ./backend
+    restart: on-failure
+    environment:
+      SPRING_PROFILES_ACTIVE: integracao
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-sai}
+      POSTGRES_USER: ${POSTGRES_USER:-sai_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sai_dev_password}
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-troque-em-producao-0123456789}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      APP_CORS_ORIGENS: ${APP_CORS_ORIGENS:-http://localhost:5173,http://frontend:80,http://frontend:5173}
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080'"]
+      interval: 10s
+      timeout: 3s
+      start_period: 60s
+      retries: 20
+
+  frontend:
+    build: ./Frontend
+    environment:
+      VITE_API_URL: /api
+      VITE_PROXY_TARGET: http://backend:8080
+      VITE_DEBUG: ${VITE_DEBUG:-false}
+      VITE_API_TIMEOUT: ${VITE_API_TIMEOUT:-15000}
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  db_data:
