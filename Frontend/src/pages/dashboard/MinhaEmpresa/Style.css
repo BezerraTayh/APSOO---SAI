@@ -1,0 +1,441 @@
+
+/* =========================================================
+   SAI · Tela 7 · Minha Empresa
+   Cores e identidade visual do Figma
+   ========================================================= */
+
+.emp-page {
+  width: 100%;
+  min-height: 100%;
+  color: #292638;
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.emp-page *,
+.emp-page *::before,
+.emp-page *::after {
+  box-sizing: border-box;
+}
+
+.emp-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.emp-page__header h1 {
+  margin: 0 0 8px;
+  color: #292638;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.emp-page__header p {
+  margin: 0;
+  color: #827d91;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.emp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.emp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #e5e1ea;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px #332b4810;
+}
+
+.emp-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.emp-top__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  flex: none;
+}
+
+.emp-top__icon--green {
+  color: #25866e;
+  background: #e4f4ef;
+}
+
+.emp-top__icon--lilac {
+  color: #6d5bd0;
+  background: #f0edff;
+}
+
+.emp-top__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.emp-top__text h2 {
+  margin: 0;
+  color: #292638;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.emp-top__text p {
+  margin: 0;
+  color: #827d91;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.emp-paragraph {
+  margin: 0;
+  color: #827d91;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.emp-divider {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: #e5e1ea;
+}
+
+.emp-subtitle {
+  margin: 0;
+  color: #292638;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 700;
+}
+
+.emp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.emp-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 27px;
+  padding: 5px 11px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.emp-tag--roxo {
+  color: #6958c9;
+  background: #eeeaff;
+}
+
+.emp-tag--verde {
+  color: #25866e;
+  background: #e4f4ef;
+}
+
+.emp-tag--laranja {
+  color: #a76b20;
+  background: #fff1dc;
+}
+
+.emp-tag--neutro {
+  color: #827d91;
+  background: #f8f7fa;
+}
+
+.emp-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.emp-actions--end {
+  justify-content: flex-end;
+}
+
+.emp-actions__hint {
+  flex: 1;
+  margin: 0;
+  color: #827d91;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.emp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.emp-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.emp-button--primario {
+  color: #ffffff;
+  background: #6d5bd0;
+}
+
+.emp-button--primario:hover:not(:disabled) {
+  background: #5c4abe;
+}
+
+.emp-button--secundario {
+  color: #292638;
+  border-color: #e5e1ea;
+  background: #ffffff;
+}
+
+.emp-button--secundario:hover:not(:disabled) {
+  background: #f8f7fa;
+}
+
+.emp-button--perigo {
+  color: #ffffff;
+  background: #c65d68;
+}
+
+.emp-button--perigo:hover:not(:disabled) {
+  background: #ae4c58;
+}
+
+/* Como funciona o vínculo */
+
+.emp-how {
+  gap: 18px;
+}
+
+.emp-how__title {
+  margin: 0;
+  color: #292638;
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.emp-how__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emp-how__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.emp-how__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border-radius: 9px;
+  color: #6d5bd0;
+  background: #f0edff;
+}
+
+.emp-how__item p {
+  flex: 1;
+  margin: 5px 0 0;
+  color: #827d91;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+/* Sem vínculo */
+
+.emp-empty {
+  align-items: center;
+  gap: 14px;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.emp-empty__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  color: #827d91;
+  background: #f8f7fa;
+}
+
+.emp-empty h2 {
+  margin: 0;
+  color: #292638;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.emp-empty > p {
+  max-width: 460px;
+  margin: 0;
+  color: #827d91;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* Mensagem de retorno */
+
+.emp-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 760px;
+  margin-bottom: 18px;
+  padding: 12px 15px;
+  border: 1px solid #cce9df;
+  border-radius: 9px;
+  color: #25866e;
+  background: #e4f4ef;
+  font-size: 12px;
+}
+
+.emp-feedback button {
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Modal sair da empresa */
+
+.emp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #211b32a8;
+}
+
+.emp-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 430px;
+  padding: 28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 15px 50px #0002;
+}
+
+.emp-modal__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  color: #c65d68;
+  background: #fbeaec;
+}
+
+.emp-modal h2 {
+  margin: 0;
+  color: #292638;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.emp-modal p {
+  margin: 0;
+  color: #827d91;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.emp-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Responsividade */
+
+@media (max-width: 700px) {
+  .emp-page__header h1 {
+    font-size: 23px;
+  }
+
+  .emp-card {
+    padding: 18px;
+  }
+
+  .emp-top {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .emp-top__text {
+    flex-basis: calc(100% - 72px);
+  }
+
+  .emp-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .emp-actions--end {
+    align-items: stretch;
+  }
+
+  .emp-actions .emp-button {
+    width: 100%;
+  }
+
+  .emp-modal__actions {
+    flex-direction: column;
+  }
+
+  .emp-modal__actions .emp-button {
+    width: 100%;
+  }
+}
