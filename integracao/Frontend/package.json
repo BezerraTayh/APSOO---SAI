@@ -1,0 +1,28 @@
+{
+  "name": "sai--sistema-de-agenda-inteligente",
+  "version": "1.0.0",
+  "description": "Frontend do SAI — Sistema de Agenda Inteligente",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@vitejs/plugin-react": "^6.3.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
